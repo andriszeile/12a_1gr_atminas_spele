@@ -19,7 +19,7 @@ async function iegutDatusNoApi(url)
 
 async function atlasitTop()
 {
-  iegutDatusNoApi('cels pie datiem json');
+  iegutDatusNoApi('result.json');
   let topsJson = await iegutDatusNoApi('topData');
   console.log(datiJson);
   for (i=0; i < topsJson.lenght; i++)
