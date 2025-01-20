@@ -19,8 +19,8 @@ async function iegutDatusNoApi(url)
 
 async function atlasitTop()
 {
-  iegutDatusNoApi('./result.json');
-  let topsJson = await iegutDatusNoApi('topData');
+  let topsJson = await iegutDatusNoApi('./result.json');
+
   console.log(datiJson);
   for (i=0; i < topsJson.length; i++)
   {
