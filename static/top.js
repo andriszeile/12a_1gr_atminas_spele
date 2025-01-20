@@ -19,10 +19,10 @@ async function iegutDatusNoApi(url)
 
 async function atlasitTop()
 {
-  iegutDatusNoApi('result.json');
+  iegutDatusNoApi('./result.json');
   let topsJson = await iegutDatusNoApi('topData');
   console.log(datiJson);
-  for (i=0; i < topsJson.lenght; i++)
+  for (i=0; i < topsJson.length; i++)
   {
     let tabula = document.querySelector(".tops");
 
