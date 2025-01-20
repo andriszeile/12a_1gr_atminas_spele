@@ -24,7 +24,7 @@ async function iegutDatusNoApi(url) {
 }
 
 async function atlasitTop() {
-    let topsJson = await iegutDatusNoApi('../result.json'); // Pārliecinies, ka ceļš ir pareizs.
+    let topsJson = await iegutDatusNoApi('/result.json'); // Pārliecinies, ka ceļš ir pareizs.
     let tabula = document.querySelector(".tops");
 
     topsJson.forEach((item) => {

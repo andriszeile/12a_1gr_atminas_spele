@@ -22,6 +22,10 @@ def top():
 def about():
     return render_template("about.html")
 
+@app.route('/result.json')
+def serve_json():
+    return send_from_directory('.', 'result.json')  # '.' atsaucas uz saknes direktoriju
+
 if __name__ == '__main__':
   #app.run(host='0.0.0.0', port=80)
   app.run(debug=True)
