@@ -10,49 +10,41 @@ let datums = new Date();
 let datumsVirkne = datums.getDate() + '.' + (datums.getMonth() + 1) + '.' + datums.getFullYear() + '.';
 
 async function iegutDatusNoApi(url) {
-    try {
-        let datiNoServera = await fetch(url);
-        if (!datiNoServera.ok) {
-            throw new Error("Servera atbilde nav veiksmīga: " + datiNoServera.status);
-        }
-        let datiNoServeraJson = await datiNoServera.json();
-        return datiNoServeraJson;
-    } catch (error) {
-        console.error("Kļūda iegūstot datus no API:", error);
-        return [];
+    let response = await fetch(url);
+    if (!response.ok) {
+        throw new Error('HTML kļūda! Statuss: ${response.status}');
     }
+    return await response.json();
 }
 
 async function atlasitTop() {
-    let topsJson = await iegutDatusNoApi('/result.json'); // Pārliecinies, ka ceļš ir pareizs.
-    let tabula = document.querySelector(".tops");
-
-    topsJson.forEach((item) => {
-        let rinda = document.createElement('tr');
-        rinda.id = item['id'];
-
-        rinda.innerHTML = `
-            <td>${item['vards']}</td>
-            <td>${item['klikski']}</td>
-            <td>${item['laiks']}</td>
-            <td>${item['datums']}</td>
-        `;
-        tabula.appendChild(rinda);
-    });
+    try {
+        let topsJson = await iegutDatusNoApi('/topData');
+        console.log("Top dati:", topsJson)
+        let tabula = document.querySelector(".tops");
+        topsJson.forEach(ieraksts => {
+            tabula.innerHTML += `
+            <tr>
+                <td>${ieraksts.vards}</td>
+                <td>${ieraksts.klikski}</td>
+                <td>${ieraksts.laiks}</td>
+                <td>${ieraksts.datums}</td>
+            </tr>`;
+        });
+    } catch (e) {
+        console.error("Kļūda, iegūstot top datus", e);
+    }
 }
 
 atlasitTop();
 
 function pievienotTop() {
     let tabula = document.querySelector('.tops');
-    let rinda = document.createElement('tr');
-    rinda.id = 'jauns';
-
-    rinda.innerHTML = `
-        <td>${vards}</td>
-        <td>${klikski}</td>
-        <td>${laiks}</td>
-        <td>${datumsVirkne}</td>
-    `;
-    tabula.appendChild(rinda);
+    tabula.innerHTML = tabula.innerHTML +`
+        <tr id='jauns'>
+            <td>`+vards+`</td>
+            <td>`+klikski+`</td>
+            <td>`+laiks+`</td>
+            <td>`+datumsVirkne+`</td>
+        </tr>`;
 }
