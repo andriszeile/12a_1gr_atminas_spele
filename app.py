@@ -36,8 +36,8 @@ def pievienot_rezultatu():
     try:
         pievienot(dati)
         top_5 = sorted(get_top_results(), key=lambda x: (x['klikski'], x['laiks']))[:5]
-        with open('result.json', 'w', encoding='utf-8') as f:
-            json.dump(top_5, f, ensure_ascii=False, indent=4)
+        with open('result.json', 'w', encoding='utf-8') as fail:
+            json.dump(top_5, fail, ensure_ascii=False, indent=4)
         return jsonify({'status': 'success'}), 200
     except Exception:
         return jsonify({'status': 'error'}), 500
