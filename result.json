@@ -1,1 +1,37 @@
-[]
+[
+    {
+        "id": 14,
+        "vards": "gg",
+        "klikski": 12,
+        "laiks": 7,
+        "datums": "2025-02-03"
+    },
+    {
+        "id": 18,
+        "vards": "joske",
+        "klikski": 12,
+        "laiks": 7,
+        "datums": "2025-02-04"
+    },
+    {
+        "id": 17,
+        "vards": "z1",
+        "klikski": 14,
+        "laiks": 8,
+        "datums": "2025-02-03"
+    },
+    {
+        "id": 11,
+        "vards": "gg",
+        "klikski": 14,
+        "laiks": 10,
+        "datums": "2025-01-26"
+    },
+    {
+        "id": 16,
+        "vards": "df",
+        "klikski": 14,
+        "laiks": 10,
+        "datums": "2025-02-03"
+    }
+]
