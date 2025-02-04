@@ -2,9 +2,9 @@ let adrese = window.location.hash;
 adrese = decodeURI(adrese);
 adrese = adrese.replace('#', '');
 adrese = adrese.split(",");
-let vards = adrese[0];
-let klikski = adrese[1];
-let laiks = adrese[2];
+vards = adrese[0];
+klikski = adrese[1];
+laiks = adrese[2];
 
 let datums = new Date();
 let datumsVirkne = datums.getDate() + '.' + (datums.getMonth() + 1) + '.' + datums.getFullYear() + '.';
@@ -12,7 +12,7 @@ let datumsVirkne = datums.getDate() + '.' + (datums.getMonth() + 1) + '.' + datu
 async function iegutDatusNoApi(url) {
     let response = await fetch(url);
     if (!response.ok) {
-        throw new Error('HTML kļūda! Statuss: ${response.status}');
+        throw new Error(`HTTP kļūda! Statuss: ${response.status}`);
     }
     return await response.json();
 }
