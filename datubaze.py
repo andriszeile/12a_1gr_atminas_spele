@@ -1,9 +1,9 @@
 import sqlite3
-
+"""
 def savienot():
   DB = sqlite3.connect('dati.db')
   return DB.cursor()
-
+"""
 def get_top_results():
   conn = sqlite3.connect('dati.db')
   c = conn.cursor()
