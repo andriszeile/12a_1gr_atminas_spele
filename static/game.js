@@ -53,21 +53,42 @@ function veiktGajienu(laukums)
     }
     pedejieDivi = []
   }
-  //gad visi laukumi ir atvērti
+  //kad visi laukumi ir atvērti
   if( laukumi.length == atvertieLaukumi.length  )
   {
     console.log('visi laukumi atvērti')
     alert('Apsveicam! \nKlikški:'+klikski+'  \nLaiks:'+laiks+' \n\nTagad vari pievienoties TOPAM');
     //dati tiek nosūtīti uz top_URL
-    document.location = 'top#'+vards+','+klikski+','+laiks
-  
+    //LIEKSdocument.location = 'top#'+vards+','+klikski+','+laiks
+    //JAUNSsagatavo rezultatus
+    let rezultats = {
+      vards: vards,
+      klikski: klikski,
+      laiks: laiks,
+      datums: new Date().toISOString().split('T')[0]
+    };
+
+    //sūta uz serveri
+    fetch('pievienot-rezultatu', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(rezultats)
+    }).then(response => {
+      if (response.ok) {
+        console.log('Rezultāti veiksmīgi saglabāti');
+        document.location = 'top#' + vards + ',' + klikski + ',' + laiks;
+      } else {
+        alert('Neizdevās saglabāt rezultātus.');
+      }
+    });
   }
 }
 function pasleptLaukumu(laukums)
 {
   document.querySelector('#'+laukums+' div').style.display='none';
 }
-
 
 setInterval(skaititLaiku, 1000);
 function skaititLaiku()

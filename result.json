@@ -1,12 +1,5 @@
 [
     {
-        "id": 14,
-        "vards": "gg",
-        "klikski": 12,
-        "laiks": 7,
-        "datums": "2025-02-03"
-    },
-    {
         "id": 18,
         "vards": "joske",
         "klikski": 12,
@@ -14,24 +7,31 @@
         "datums": "2025-02-04"
     },
     {
-        "id": 17,
-        "vards": "z1",
-        "klikski": 14,
-        "laiks": 8,
-        "datums": "2025-02-03"
+        "id": 19,
+        "vards": "A12",
+        "klikski": 24,
+        "laiks": 13,
+        "datums": "2025-02-10"
     },
     {
-        "id": 11,
-        "vards": "gg",
-        "klikski": 14,
-        "laiks": 10,
-        "datums": "2025-01-26"
+        "id": 1,
+        "vards": "Anonīmais",
+        "klikski": 100,
+        "laiks": 100,
+        "datums": "2020-01-01"
     },
     {
-        "id": 16,
-        "vards": "df",
-        "klikski": 14,
-        "laiks": 10,
-        "datums": "2025-02-03"
+        "id": 2,
+        "vards": "Anonīmais",
+        "klikski": 100,
+        "laiks": 100,
+        "datums": "2020-01-01"
+    },
+    {
+        "id": 3,
+        "vards": "Anonīmais",
+        "klikski": 100,
+        "laiks": 100,
+        "datums": "2020-01-01"
     }
 ]
