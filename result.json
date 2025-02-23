@@ -7,6 +7,13 @@
         "datums": "2025-02-04"
     },
     {
+        "id": 20,
+        "vards": "z12",
+        "klikski": 14,
+        "laiks": 9,
+        "datums": "2025-02-23"
+    },
+    {
         "id": 19,
         "vards": "A12",
         "klikski": 24,
@@ -22,13 +29,6 @@
     },
     {
         "id": 2,
-        "vards": "Anonīmais",
-        "klikski": 100,
-        "laiks": 100,
-        "datums": "2020-01-01"
-    },
-    {
-        "id": 3,
         "vards": "Anonīmais",
         "klikski": 100,
         "laiks": 100,
