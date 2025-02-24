@@ -59,7 +59,28 @@ function veiktGajienu(laukums)
     console.log('visi laukumi atvērti')
     alert('Apsveicam! \nKlikški:'+klikski+'  \nLaiks:'+laiks+' \n\nTagad vari pievienoties TOPAM');
     //dati tiek nosūtīti uz top_URL
-    document.location = 'top#'+vards+','+klikski+','+laiks
+    let rezutats = {
+      vards: vards,
+      klikski: klikski,
+      laiks: laiks,
+      datums: new Date().toISOString().split('T')[0]
+    };
+    //sūta uz serveri
+    fetch('pievienot-rezultatu', {
+      methods: 'POST',
+      headers: {
+        'Content-Type': 'aplication/json',
+      },
+      body: JSON.stringify(rezutats)
+    }).then(response => {
+      if (response.ok) {
+        console.log('Rezultāti veiksmīgi saglabāti')
+        document.location = 'top#'+vards+','+klikski+','+laiks
+      } else {
+        alert('Neizdevās saglabāt rezultātus.')
+      }
+    });
+
   }
 }
 function pasleptLaukumu(laukums)
