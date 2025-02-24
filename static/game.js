@@ -68,14 +68,12 @@ function veiktGajienu(laukums)
     //sūta uz serveri
     fetch('pievienot-rezultatu', {
       methods: 'POST',
-      headers: {
-        'Content-Type': 'aplication/json',
-      },
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(rezutats)
     }).then(response => {
       if (response.ok) {
-        console.log('Rezultāti veiksmīgi saglabāti')
-        document.location = 'top#'+vards+','+klikski+','+laiks
+        console.log('Rezultāti veiksmīgi saglabāti');
+        document.location = 'top#'+vards+','+klikski+','+laiks;
       } else {
         alert('Neizdevās saglabāt rezultātus.')
       }
