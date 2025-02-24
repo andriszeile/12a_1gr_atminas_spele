@@ -68,7 +68,7 @@ function veiktGajienu(laukums)
       datums: new Date().toISOString().split('T')[0]
     };
 
-    //sūta uz serveri
+    //sūta uz serveri    ej.uz/spo12-1
     fetch('pievienot-rezultatu', {
       method: 'POST',
       headers: {
