@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import json
 from datubaze import get_top_results, pievienot
-#ej.uz/121spo
+
 app = Flask(__name__)
 
 @app.route('/')

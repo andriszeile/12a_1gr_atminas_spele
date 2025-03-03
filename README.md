@@ -1,2 +1,2 @@
-# 12a_1gr_atminas_spele
- 
+# Atmiņas spēle
+# īsā adrese ej.uz/121spo 
