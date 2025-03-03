@@ -60,7 +60,6 @@ function veiktGajienu(laukums)
     alert('Apsveicam! \nKlikški:'+klikski+'  \nLaiks:'+laiks+' \n\nTagad vari pievienoties TOPAM');
     //dati tiek nosūtīti uz top_URL
 
-
     let rezultats = {
       vards: vards,
       klikski: klikski,
@@ -68,7 +67,7 @@ function veiktGajienu(laukums)
       datums: new Date().toISOString().split('T')[0]
     };
 
-    //sūta uz serveri    ej.uz/spo12-1
+    //sūta uz serveri
     fetch('pievienot-rezultatu', {
       method: 'POST',
       headers: {
