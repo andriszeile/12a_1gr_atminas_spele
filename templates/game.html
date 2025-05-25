@@ -2,74 +2,54 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>Atrodi bumbu!</title>
   <link href="static/style.css" rel="stylesheet">
-  <title>Atmiņas spēle</title>
 </head>
 <body>
   <div class="wrapper">
     <div class="header">
-      <h1>Atmiņas spēle</h1>
+      <h1>Atrodi bumbu!</h1>
       <ul>
-        <li>
-          <a href="/">Sākums</a>
-        </li>
-        <li>
-          <a href="game">Spēle</a>
-        </li>
-        <li>
-          <a href="top">Tops</a>
-        </li>
-        <li>
-          <a href="about">Par</a>
-        </li>
+        <li><a href="/">Sākums</a></li>
+        <li><a href="game">Spēle</a></li>
+        <li><a href="top">Tops</a></li>
+        <li><a href="about">Par</a></li>
       </ul>
-    </div> <!--Beidzas header-->
+    </div>
+
     <div class="content">
       <div class="game">
-        <div class="block" id='L01' onclick="veiktGajienu('L01')">
-          <div>😀</div>
-        </div>
-        <div class="block" id='L02' onclick="veiktGajienu('L02')">
-          <div>🤡</div>
-        </div>
-        <div class="block" id='L03' onclick="veiktGajienu('L03')">
-          <div>😺</div>
-        </div>
-        <div class="block" id='L04' onclick="veiktGajienu('L04')">
-          <div>🎃</div>
-        </div>
-        <div class="block" id='L05' onclick="veiktGajienu('L05')">
-          <div>😺</div>
-        </div>
-        <div class="block" id='L06' onclick="veiktGajienu('L06')">
-          <div>🤖</div>
-        </div>
-        <div class="block" id='L07' onclick="veiktGajienu('L07')">
-          <div>😀</div>
-        </div>
-        <div class="block" id='L08' onclick="veiktGajienu('L08')">
-          <div>🎃</div>
-        </div>
-        <div class="block" id='L09' onclick="veiktGajienu('L09')">
-          <div>🤖</div>
-        </div>
-        <div class="block" id='L10' onclick="veiktGajienu('L10')">
-          <div>👽</div>
-        </div>
-        <div class="block" id='L11' onclick="veiktGajienu('L11')">
-          <div>👽</div>
-        </div>
-        <div class="block" id='L12' onclick="veiktGajienu('L12')">
-          <div>🤡</div>
-        </div>
-        
+        <!-- Šeit ģenerējam laukumus, kur var slēpties bumba -->
+        <div class="field" id="F01" onclick="mekletBumbu('F01')"></div>
+        <div class="field" id="F02" onclick="mekletBumbu('F02')"></div>
+        <div class="field" id="F03" onclick="mekletBumbu('F03')"></div>
+        <div class="field" id="F04" onclick="mekletBumbu('F04')"></div>
+        <div class="field" id="F05" onclick="mekletBumbu('F05')"></div>
+        <div class="field" id="F06" onclick="mekletBumbu('F06')"></div>
+        <div class="field" id="F07" onclick="mekletBumbu('F07')"></div>
+        <div class="field" id="F08" onclick="mekletBumbu('F08')"></div>
+        <div class="field" id="F09" onclick="mekletBumbu('F09')"></div>
+      </div>
+    </div>
+  </div>
 
-      </div> <!--aizver game-->
+  <script>
+    // Ģenerējam nejaušu pozīciju bumbai
+    const bumbasPozicija = 'F0' + (Math.floor(Math.random() * 9) + 1);
 
-    </div> <!--Beidzas content-->
-
-  </div> <!--Beidzas wrapper-->
-
-<script src="static/game.js"></script>
+    function mekletBumbu(id) {
+      if (id === bumbasPozicija) {
+        document.getElementById(id).innerHTML = '🏀';
+        alert('Atradāt bumbu!');
+      } else {
+        document.getElementById(id).innerHTML = '❌';
+      }
+    }
+  </script>
 </body>
 </html>
+
+
+
+
+

@@ -1,47 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="lv">
 <head>
   <meta charset="UTF-8">
-  <link href="static/style.css" rel="stylesheet">
-  <title>Atmiņas spēle</title>
+  <title>Top 5 Rezultāti</title>
+  <link rel="stylesheet" href="static/css/style.css" />
 </head>
 <body>
   <div class="wrapper">
-    <div class="header">
-      <h1>Atmiņas spēle</h1>
-      <ul>
-        <li>
-          <a href="/">Sākums</a>
-        </li>
-        <li>
-          <a href="game">Spēle</a>
-        </li>
-        <li>
-          <a href="top">Tops</a>
-        </li>
-        <li>
-          <a href="about">Par</a>
-        </li>
-      </ul>
-    </div> <!--Beidzas header-->
-    <div class="content">
-      <h3>Tops</h3>
-      <!--<button onclick='pievienotTop()'>Pievienoties top'am</button>
-      <hr />-->
-      <table class='tops'>
-        <tr>
-          <td>Spēlētājs</td>
-          <td>Klikšķu skaits</td>
-          <td>Laiks</td>
-          <td>Datums</td>
-        </tr>
-      </table>
+    <h1>🏅 Top 5 Spēlētāji</h1>
+    <div id="results-container">
+      <p>🔄 Ielādē rezultātus...</p>
+    </div>
+    <a href="index.html"><button>🏠 Atpakaļ uz sākumu</button></a>
+  </div>
 
-
-    </div> <!--Beidzas content-->
-
-  </div> <!--Beidzas wrapper-->
-<script src='static/top.js'></script>
-
+  <script src="static/js/top.js"></script>
 </body>
 </html>

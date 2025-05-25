@@ -1,41 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="lv">
 <head>
-  <meta charset="UTF-8">
-  <link href="static/style.css" rel="stylesheet">
-  <title>Atmiņas spēle</title>
+  <meta charset="UTF-8" />
+  <title>Spēle - Atrodi Bumbu</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
-  <div class="wrapper">
-    <div class="header">
-      <h1>Atmiņas spēle</h1>
-      <ul>
-        <li>
-          <a href="/">Sākums</a>
-        </li>
-        <li>
-          <a href="game">Spēle</a>
-        </li>
-        <li>
-          <a href="top">Tops</a>
-        </li>
-        <li>
-          <a href="about">Par</a>
-        </li>
-      </ul>
-    </div> <!--Beidzas header-->
-    <div class="content">
-      <h3>Noteikumi</h3>
-      <p>Sameklē vienādo figūru pārus ar pēc iespējas mazāko klikšīņāšanu skaitu.</p>
-      <h3>Spēlētāja pieteikšanās</h3>
-      Vārds:<input id="vards"/>
-      <button onclick="saktSpeli()">Sāk spēli</button>
+  <div id="game-container">
+    <div id="ball" onclick="moveBall()"></div>
+    <div class="hud">
+      <h1>🎯 Atrodi Bumbu!</h1>
 
+      <label for="playerName">Tavs vārds:</label><br />
+      <input type="text" id="playerName" placeholder="Ievadi vārdu" />
+      <div id="game-container">
+      </div>      
 
-    </div> <!--Beidzas content-->
+      <div class="controls">
+        <button onclick="startGame()">▶️ Sākt spēli</button>
+        <script src="{{ url_for('static', filename='js/game.js') }}"></script>
 
-  </div> <!--Beidzas wrapper-->
-<script src="static/sakums.js"></script>
+        <button onclick="restartGame()">🔁 Restartēt</button>
+      </div>
 
+      <div class="scoreboard">
+        <p>🏆 Punkti: <span id="score">0</span></p>
+        <p>⏱️ Atlikušais laiks: <span id="time">30</span> sek.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/game.js') }}"></script>
 </body>
 </html>
